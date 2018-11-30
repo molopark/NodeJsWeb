@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+	.select{ background:red;}
+</style>
+<script src="../lib/jquery-3.3.1.js"></script>
+<script>
+$(function(){
+	$("#a").on("click",function(){
+		var sw = $(this).attr("class");
+		if(sw == "") {
+			$(this).addClass("select");
+		} else {
+			$(this).attr("class","");
+		}
+	});
+
+	$("#b").on("click",function(){
+		var sw = $(this).attr("class");
+		if(sw == "") {
+			$(this).attr("class","bigFont");
+			$(this).css("font-size","32px");
+		} else {
+			$(this).attr("class","");
+			$(this).css("font-size","10px");
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li id="a" class="">a click</li>
+		<li id="b" class="">b css</li>
+	</ul>
+</body>
+</html>
