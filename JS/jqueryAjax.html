@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="content-Type" content="text/html; charset=euc-kr" />
-<script src="http://127.0.0.1:8888/jqueryTest/jquery-171min.js" type="text/javascript"></script>
+<script src="jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
   
 	$("#ajLoad").click(function() {
-	  $("#divLoad").load("http://127.0.0.1:8888/jqueryTest/demo_test.txt", function(responseTxt, statusTxt, xhr) {
+	  $("#divLoad").load("demo_test.txt", function(responseTxt, statusTxt, xhr) {
 	    if(statusTxt == "success")
 	      //alert("External Content loaded successfully!");
 	    if(statusTxt == "error")
@@ -20,7 +20,7 @@ $(document).ready(function() {
   });
   
 	$("#ajGet").click(function() {
-	  $.get("http://127.0.0.1:8888/jqueryTest/demo_test.txt", function(data, status) {
+	  $.get("demo_test.txt", function(data, status) {
 	    $("#divGet").html(data);
       alert("Data : "+ data + "\nStatus : " + status);
   	});
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 	$("#ajPost").click(function() {
 	  $.post(
-	    "http://127.0.0.1:8888/jqueryTest/demo_test.html",
+	    "demo_test.html",
 	    {	    },
 	    function(data, status) {
 	    if(status == "error") {
