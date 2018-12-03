@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=euc-kr" />
+<script src="http://127.0.0.1:8888/jqueryTest/jquery-171min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  
+	$("#ajLoad").click(function() {
+	  $("#divLoad").load("http://127.0.0.1:8888/jqueryTest/demo_test.txt", function(responseTxt, statusTxt, xhr) {
+	    if(statusTxt == "success")
+	      //alert("External Content loaded successfully!");
+	    if(statusTxt == "error")
+	      alert("Error : "+ xhr.status + ":" + xhr.statusText);
+  	});
+  });
+
+	$("#ajLoadUndo").click(function() {
+	  $("#divLoad").html("<h1>Loading...</h1>");
+  });
+  
+	$("#ajGet").click(function() {
+	  $.get("http://127.0.0.1:8888/jqueryTest/demo_test.txt", function(data, status) {
+	    $("#divGet").html(data);
+      alert("Data : "+ data + "\nStatus : " + status);
+  	});
+  });
+
+	$("#ajGetUndo").click(function() {
+	  $("#divGet").html("<h1>Loading...GET</h1>");
+  });
+
+	$("#ajPost").click(function() {
+	  $.post(
+	    "http://127.0.0.1:8888/jqueryTest/demo_test.html",
+	    {	    },
+	    function(data, status) {
+	    if(status == "error") {
+	      alert("Error : "+ status);
+	    } else {
+	    $("#divPost").html(data);
+      alert("Data : "+ data + "\nStatus : " + status);
+	    }
+  	});
+  });
+
+	$("#ajPostUndo").click(function() {
+	  $("#divPost").html("<h1>Loading...POST</h1>");
+  });
+
+});
+</script>
+</head>
+
+<body>
+<div id="divLoad"><h1>Loading...</h1></div>
+<input type="button" value="ajax load" id="ajLoad" ></input>
+<input type="button" value="ajax load undo" id="ajLoadUndo" ></input>
+</br>
+
+<div id="divGet"><h1>Loading...GET</h1></div>
+<input type="button" value="ajax get" id="ajGet" ></input>
+<input type="button" value="ajax get undo" id="ajGetUndo" ></input>
+</br>
+
+<div id="divPost"><h1>Loading...POST</h1></div>
+<input type="button" value="ajax post" id="ajPost" ></input>
+<input type="button" value="ajax post undo" id="ajPostUndo" ></input>
+</body>
+</html>
