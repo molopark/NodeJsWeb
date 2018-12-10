@@ -1,0 +1,17 @@
+node.js 설치 : nodejs.org
+node-v10.13.0-x64.msi
+
+파이어베이스 CLI 설치
+npm install -g firebase-tools
+
+project 생성 : console.firebase.google.Compile
+프로젝트 생성, 인증(Authentication) , Database-RealtimeDatabase
+
+pc 디렉토리 생성 : \firebase\memoWeb
+이후 command 창에서 실행
+firebase login
+filebase list  : 프로젝트 목록
+firebase init : 프로젝트 이름 , 인증, database 선택
+
+서버 실행 : command 창에서
+firebase serve : 오류 발생시 안내문구 참고
