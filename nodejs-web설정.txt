@@ -15,3 +15,7 @@ firebase init : 프로젝트 이름 , 인증, database 선택
 
 서버 실행 : command 창에서
 firebase serve : 오류 발생시 안내문구 참고
+
+#서버실행
+설치 : npm i nodemon --save
+실행 : npm start (package.json 참고)
