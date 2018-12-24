@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<TITLE> closure</TITLE>
+</HEAD>
+<script>
+//내부함수가 외부함수에 접근 할 수 있다.
+//내부함수는 외부함수의 지역변수에 접근할 수 있다.
+function outter(){
+	var name = 'kang';
+	function inner(){
+			//alert(name);
+			document.write(name);
+	}
+	inner();
+}
+outter();
+</script>
+<BODY>
+</BODY>
+</HTML>

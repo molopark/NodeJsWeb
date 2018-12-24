@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE> closure</TITLE>
+</HEAD>
+<script>
+//내부함수가 외부함수에 접근 할 수 있다.
+//내부함수는 외부함수의 지역변수에 접근할 수 있다.
+//외부함수
+function outter(){
+	var name = 'kang';
+		return function inner(){
+			//alert(name)
+      document.write(name);
+		}
+}
+inner = outter();
+inner();
+
+//내부함수는 외부함수의 지역변수에 접근할 수 있다.
+// 외부함수의 실행이 끝나서 외부함수가 소멸된 후에도 내부함수가 외부함수의 변수에 접근할 수 있다.
+// 26행에서 함수 outter를 호출
+// 그 결과가 inner에 담긴다.
+//그리고 outter 함수는 종료된다. 지역변수도 소멸되어댜 한다.
+// 하지만 inner() 함수를 실행 했을 때 kang이 출력된 것은 외부함수의 지역변수가 소멸되지 않았다는 것을 의미한다.
+// 외부함수는 외부함수의 지역변수를 사용하는 내부함수가 소멸될 때까지 소멸되지 않는 특성이 클로저다.
+</script>
+<BODY>
+</BODY>
+</HTML>

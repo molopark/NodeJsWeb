@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="utf-8"/>
+<TITLE> hamsoo</TITLE>
+</HEAD>
+<script>
+var arr = []
+//console.log("START");
+document.write("START<br>");
+for(var i = 0; i < 5; i++){
+  //console.log("A");
+  document.write("A<br>");
+  arr[i] = function(id) {
+    //console.log("B");
+    document.write("B<br>");
+				    return function(){ return id;}
+					}(i);
+}
+
+for(var index in arr) {
+  //console.log("C");
+  document.write("C<br>");
+  //console.log(arr[index]());
+  document.write(arr[index]()+"<br>");
+}
+</script>
+<BODY>
+</BODY>
+</HTML>
